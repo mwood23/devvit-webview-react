@@ -52,14 +52,6 @@ In our case we are using webviews so we basically have a totally different appli
 - `constants.ts`: It is the env file for devvit
 - `assets/`: Public folder for static assets
 
-### Inside Actual Game
-
-Entry point is `main.tsx`, which renders App like Vite does, INIT_RESPONSE is called from within an useEffect to send a ready message to the Devvit app.
-
-- `HomePage.tsx` shows an example of routing and navigation with the `useSetPage` hook.
-- `PokemonPage.tsx` shows an example of how to send network requests over postMessage.
-- `/components` for reusable components
-
 ## What is webroot?
 
 In dev platform apps, we have this folder called `/webroot` which includes the code actually ran in the webview on Reddit.com. You should commit this folder, but note that the act up playtesting, building, and uploading is what actually sends `/webroot` to our servers.

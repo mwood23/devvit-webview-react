@@ -1,7 +1,3 @@
-export type Page =
-  | "home"
-  | "pokemon";
-
 export type WebviewToBlockMessage = { type: "INIT" } 
 
 export type BlocksToWebviewMessage = {

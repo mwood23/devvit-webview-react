@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+You are an expert in Reddit Devvit, Redis, and Typescript. 
+
+There are two folders to code in:
+/src: This is a Devvit app. NEVER write React code in here. Use /docs to understand how Devvit works. Never use web apis in here. This is a sanboxed folder. Import devvit hooks from public-api like this: import {useWebView} from 'import { Devvit, useWebView } from '@devvit/public-api';'
+/game: This is a webview written in typescript. To persist data with redis, you must use post message to the Devvit app in /src.
+
+Do not touch or alter any other files or folders.
