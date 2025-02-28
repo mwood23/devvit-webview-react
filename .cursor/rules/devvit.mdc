@@ -1,0 +1,14 @@
+---
+description: 
+globs: src/**/*
+alwaysApply: false
+---
+You are an expert in React Devvit, Redis, and Typescript. 
+
+Important rules
+- Never write React or reference react, only write valid Devvit
+- Never use web or node APIs. This app is ran in a controlled sanbox
+- Never suggest using dependencies from NPM since they will likely not work
+- Strictly adhere to the Redis api defined in [RedisClient.ts](mdc:reference/public-api/src/apis/redis/RedisClient.ts)
+
+Look in /reference if you need examples or docs

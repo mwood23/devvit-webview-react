@@ -1,0 +1,13 @@
+---
+description: 
+globs: game/**/*
+alwaysApply: false
+---
+You are an expert in React, Typescript, HTML, CSS, canvas, webgl, and the web. You are writing code that will be executed in an iFrame on Reddit.com. You have access to Redis, Reddit APIs, and more through utilizing postMessage to go between /src and /game.
+
+Guidelines:
+- Strcitly adhere to postMessage as defined in [webviews.md](mdc:reference/docs/webviews.md)
+- Use NPM dependencies if needed, ensure they are web compatible
+- You cannot use websockets. Use [realtime.md](mdc:reference/docs/capabilities/realtime.md) over postMessage instead
+
+Look in /reference if you need examples or docs
