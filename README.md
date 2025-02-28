@@ -70,17 +70,22 @@ For the most part, you should never be in here unless you are debugging compilat
   - Make sure the codebase has been indexed. You can also delete and reindex. Interesting to see it working.
 - Enable large context
 - Go to models and enable the following (no need for API keys because you are paying):
+
   - claude-3.5-sonnet: Will require more coaching but can do what you need long as you encourage it. A workhorse model.
   - claude-3.7-sonnet: Will give you the entire world and do some crazy stuff. It's high agency, but sometimes you need to tell it to slow down and come up with simpler answers. Another workhorse.
   - claude-3.7-sonnet-thinking: Great for laying out a project and for thinking through game mechanics. Start here normally for big stuff.
   - gpt-4o: I'd compare this model to Mario in MarioKart. Mid all around, not spectacular at anything. When you need solid, go for it.
-  - o3-mini: Another model great for laying out stuff and thinking. Sometimes better than 3.7-sonnet-thinking.
+  - o3-mini: Another model great for describing how stuff works. I can't get it to output code so I rarely use it.
+
 - Go to rules:
   - User rules:
   ```
     - Keep answers concise and direct
     - Prioritize technical details over generic advice
     - If you do not know the answer, say so instead of guessing
+    - Before writing go, think through the problem step by step and describe your plan for what to build in great detail
+    - Leave NO todos, placeholders, or missing pieces
+    - Ensure the code is complete and verify thoroughly
   ```
   -
 
@@ -128,3 +133,14 @@ I use the `tab` autocomplete a bunch, but I rarely use the `cmd + k` inline code
 - Make your post on the subreddit you are testing on
 - Make sure it's all working and go to cursor
 -
+
+## Cursor Experimentation
+
+- The /game being react really confused it. Decided to use just typescript
+- It keeps trying to use /webroot instead of /game. Maybe we just walk away from typescript for now on generation
+- Putting all the copy pasted stuff in /reference made the results worse. The agent lists the folders in the root of the repo and I can't figure out how to make it look in reference
+- I don't think the cursor rules are always applied which is really annoying. Putting everything in global.mdc feels like it improved stuff since it's always attached
+- Directly attaching @docs when asking for a big prompt (like build me snake), feels like it improved results
+- The examples are not consistent enough to not confuse it. For example, pulling hooks off of context vs pulling hooks off of public api.
+- Using Tailwind 4.0 is bad for the LLM (does 3.x stuff), but good for the dev since the docs defaults you to it: https://tailwindcss.com/
+- I can't tell if the global rules actually do anything.

@@ -3,10 +3,9 @@ description:
 globs: 
 alwaysApply: true
 ---
-You are an expert in Reddit Devvit, Redis, and Typescript. 
+You are an expert in Reddit Devvit, Redis, TailwindCSS, and Typescript.
 
 There are two folders to code in:
-/src: This is a Devvit app. NEVER write React code in here. Use /docs to understand how Devvit works. Never use web apis in here. This is a sanboxed folder. Import devvit hooks from public-api like this: import {useWebView} from 'import { Devvit, useWebView } from '@devvit/public-api';'
-/game: This is a webview written in typescript. To persist data with redis, you must use post message to the Devvit app in /src.
+- /src: This is a Devvit app. NEVER write React code in here. Use /docs to understand how Devvit works. Never use web apis in here. This is a sanboxed folder. Import devvit hooks from public-api like this: import {useWebView} from 'import { Devvit, useWebView } from '@devvit/public-api';'. Devvit apps are shown to the user in the Reddit feed. Strictly adhere to the patterns in /docs and /examples when writing Devvit app code.
+- /game: This is a webview written in typescript. To persist data with redis, you must use post message to the Devvit app in /src. Webviews are shown in a modal to the user and can only be triggered via the useWebView hook inside of a Devvit app. This is using the latest version of tailwind, there is no configuration you need to do for it to work.
 
-Do not touch or alter any other files or folders.
