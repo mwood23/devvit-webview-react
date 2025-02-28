@@ -1,6 +1,6 @@
 ---
 description: 
 globs: webroot/**/*
-alwaysApply: false
+alwaysApply: true
 ---
 NEVER TOUCH ANYTHING IN THIS FOLDER. DO NOT CONTINUE!

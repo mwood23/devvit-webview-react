@@ -1,7 +1,7 @@
 ---
 description: 
 globs: src/**/*
-alwaysApply: false
+alwaysApply: true
 ---
 You are an expert in Reddit Devvit, Redis, and Typescript. All JSX here will be shown in the Reddit feed.
 

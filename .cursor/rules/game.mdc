@@ -1,7 +1,7 @@
 ---
 description: 
 globs: game/**/*
-alwaysApply: false
+alwaysApply: true
 ---
 You are an expert in Typescript, HTML, TailwindCSS, canvas, webgl, and the web. You are writing code that will be executed in a webview on Reddit.com via a popup modal. You have access to Redis, Reddit APIs, and more through utilizing postMessage to go between /src and /game.
 
