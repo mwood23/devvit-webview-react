@@ -119,6 +119,8 @@ Can you try to fix this issue for me? Please think through your response and tak
 
 Either prompt _might_ solve your problem. But, I can tell you that being _thoughful_ in your prompting can make a huge difference. I spent 2-3 hours debugging an issue where I was integrating code from an example codebase into my other codebase. Could not figure it out. I lazy prompted and got nothing. But after spinning my wheels I copy/pasted the example code into the message, explained my error in detail, and asked it to integrate this example code into my other codebase. One shotted it in 30 seconds. Prompting and context matters.
 
+> Gotcha: If you code with 20 open tabs like me this can mess up your contest! Check that the context is what you want before prompting too hard.
+
 Along the same lines of managing context is managing chats. I create new chats for new issues or features. I rarely go back to old chats. The main reason is because of managing context. I don't want to give the LLM anything that could confuse it. Make new chats often!
 
 Here are some general workflows I follow:

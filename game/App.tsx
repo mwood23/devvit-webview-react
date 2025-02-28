@@ -1,25 +1,9 @@
-import { Page } from './shared';
-import { PokemonPage } from './pages/PokemonPage';
-import { HomePage } from './pages/HomePage';
-import { usePage } from './hooks/usePage';
 import { useEffect, useState } from 'react';
-import { sendToDevvit } from './utils';
+import { cn, sendToDevvit } from './utils';
 import { useDevvitListener } from './hooks/useDevvitListener';
-
-const getPage = (page: Page, { postId }: { postId: string }) => {
-  switch (page) {
-    case 'home':
-      return <HomePage postId={postId} />;
-    case 'pokemon':
-      return <PokemonPage />;
-    default:
-      throw new Error(`Unknown page: ${page satisfies never}`);
-  }
-};
 
 export const App = () => {
   const [postId, setPostId] = useState('');
-  const page = usePage();
   const initData = useDevvitListener('INIT_RESPONSE');
   useEffect(() => {
     sendToDevvit({ type: 'INIT' });
@@ -31,5 +15,16 @@ export const App = () => {
     }
   }, [initData, setPostId]);
 
-  return <div className="h-full">{getPage(page, { postId })}</div>;
+  return (
+    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-slate-900">
+      <div className="pointer-events-none absolute inset-0 z-20 h-full w-full bg-slate-900 [mask-image:radial-gradient(transparent,white)]" />
+
+      <h1 className={cn('relative z-20 text-xl text-white md:text-4xl')}>Welcome to Devvit</h1>
+      <p className="relative z-20 mt-2 mb-4 text-center text-neutral-300">
+        Let's build something awesome!
+      </p>
+      <img src="/assets/default-snoovatar.png" alt="default snoovatar picture" />
+      <p className="relative z-20 mt-2 mb-4 text-center text-neutral-300">PostId: {postId}</p>
+    </div>
+  );
 };

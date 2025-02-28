@@ -19,5 +19,5 @@
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
-  "cSpell.words": ["webroot", "zoddy"]
+  "cSpell.words": ["cn", "Devvit", "snoovatar", "webroot", "zoddy"]
 }
