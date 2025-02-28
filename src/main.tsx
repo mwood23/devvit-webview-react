@@ -2,7 +2,6 @@ import { Devvit, useWebView } from '@devvit/public-api';
 import { DEVVIT_SETTINGS_KEYS } from './constants.js';
 import { BlocksToWebviewMessage, WebviewToBlockMessage } from '../game/shared.js';
 import { Preview } from './components/Preview.js';
-import { getPokemonByName } from './core/pokeapi.js';
 
 Devvit.addSettings([
   // Just here as an example
@@ -48,10 +47,7 @@ Devvit.addCustomPostType({
   render: (context) => {
     const { mount } = useWebView<WebviewToBlockMessage, BlocksToWebviewMessage>({
       onMessage: async (event, { postMessage }) => {
-        console.log('Received message', event);
-        const data = event as unknown as WebviewToBlockMessage;
-
-        switch (data.type) {
+        switch (event.type) {
           case 'INIT':
             postMessage({
               type: 'INIT_RESPONSE',
@@ -60,24 +56,8 @@ Devvit.addCustomPostType({
               },
             });
             break;
-          case 'GET_POKEMON_REQUEST':
-            context.ui.showToast({ text: `Received message: ${JSON.stringify(data)}` });
-            const pokemon = await getPokemonByName(data.payload.name);
-
-            postMessage({
-              type: 'GET_POKEMON_RESPONSE',
-              payload: {
-                name: pokemon.name,
-                number: pokemon.id,
-                // Note that we don't allow outside images on Reddit if
-                // wanted to get the sprite. Please reach out to support
-                // if you need this for your app!
-              },
-            });
-            break;
-
           default:
-            console.error('Unknown message type', data satisfies never);
+            console.error('Unknown message type', event.type satisfies never);
             break;
         }
       },

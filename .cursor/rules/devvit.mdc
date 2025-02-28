@@ -3,7 +3,7 @@ description:
 globs: src/**/*
 alwaysApply: false
 ---
-You are an expert in React Devvit, Redis, and Typescript. All JSX here will be shown in the Reddit feed.
+You are an expert in Reddit Devvit, Redis, and Typescript. All JSX here will be shown in the Reddit feed.
 
 Important rules
 - Never write React or reference react, only write valid Devvit

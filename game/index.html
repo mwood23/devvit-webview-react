@@ -3,14 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="index.css" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>devvit-webview-react</title>
+    <title>devvit-webview</title>
   </head>
   <body class="h-full bg-slate-900">
-    <div id="root" class="h-full"></div>
-    <script type="module" src="main.tsx"></script>
+    <div
+      className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-slate-900"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 z-20 h-full w-full bg-slate-900 [mask-image:radial-gradient(transparent,white)]"
+      ></div>
+
+      <h1 className="relative z-20 text-xl text-white md:text-4xl">Welcome to Devvit</h1>
+      <p className="relative z-20 mt-2 mb-4 text-center text-neutral-300">
+        Let's build something awesome!
+      </p>
+      <img src="/assets/default-snoovatar.png" alt="default snoovatar picture" />
+      <p id="postId" className="relative z-20 mt-2 mb-4 text-center text-neutral-300"></p>
+    </div>
+    <script type="module" src="main.ts"></script>
   </body>
 </html>
